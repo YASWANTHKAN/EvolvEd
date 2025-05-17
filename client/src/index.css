@@ -1,0 +1,351 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --secondary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --danger-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --info-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gray-gradient: linear-gradient(135deg, #4b5563 0%, #1f2937 100%);
+}
+
+/* Base dark mode styling */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #111111;
+  color: #eeeeee;
+}
+
+/* Custom color classes */
+.bg-custom {
+  background-image: var(--primary-gradient);
+  @apply text-white;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-custom:hover {
+  filter: brightness(110%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.bg-custom-dark {
+  @apply bg-gray-900;
+}
+
+.text-custom {
+  @apply text-gray-800;
+}
+
+.text-custom-dark {
+  @apply text-gray-900;
+}
+
+.border-custom {
+  border-color: #222222;
+}
+
+/* Timer Styles */
+.timer-display {
+  font-family: "Courier New", monospace;
+}
+
+.timer-display div {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  color: #111111;
+  background-color: #eeeeee;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Progress Session Styles */
+.session-progress {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+}
+
+/* Current Session display */
+.current-session {
+  font-size: 1.125rem;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  color: #111111;
+  background-color: #e0e0e0;
+}
+
+/* Hover states */
+.hover\:bg-custom-dark:hover {
+  background-color: #111111;
+}
+
+.hover\:text-custom-dark:hover {
+  color: #111111;
+}
+
+/* Button styles */
+.rounded-button {
+  border-radius: 0.375rem;
+}
+
+/* Focus styles */
+.focus\:ring-custom:focus {
+  @apply focus:ring-gray-800;
+}
+
+.focus\:border-custom:focus {
+  @apply focus:border-gray-800;
+}
+
+/* Input fields with focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: #424242;
+  --tw-ring-opacity: 0.5;
+}
+
+/* Additional styles */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-gray-800 dark:text-gray-200;
+  background-color: #f5f7fb;
+}
+
+.tasks-container {
+  padding: 20px;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.task-button {
+  padding: 8px 16px;
+  background-color: #424242;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-button:hover {
+  background-color: #212121;
+}
+
+.task-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.task-column {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.task-column h3 {
+  margin-bottom: 15px;
+  color: #212121;
+}
+
+.task-card {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.task-action-button {
+  padding: 4px 8px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.task-action-button:hover {
+  background-color: #e0e0e0;
+}
+
+.task-action-button.delete {
+  color: #7f1d1d;
+}
+
+.task-action-button.delete:hover {
+  background-color: #fafafa;
+}
+
+/* Chart tooltip styles */
+.chart-point-group:hover .chart-tooltip {
+  opacity: 1 !important;
+}
+
+.chart-point-group .chart-tooltip {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.chart-point-group:hover .chart-point {
+  r: 6;
+}
+
+/* Card styles */
+.card {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Stats cards */
+.stats-card {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.6), rgba(99, 102, 241, 0.2));
+}
+
+.stats-card.blue-card {
+  background: linear-gradient(145deg, #e6f0ff 0%, #f0f7ff 100%);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.stats-card.blue-card::before {
+  background-image: linear-gradient(to right, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.2));
+}
+
+.stats-card.green-card {
+  background: linear-gradient(145deg, #e6fbef 0%, #f0fdf9 100%);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.stats-card.green-card::before {
+  background-image: linear-gradient(to right, rgba(16, 185, 129, 0.8), rgba(16, 185, 129, 0.2));
+}
+
+.stats-card.yellow-card {
+  background: linear-gradient(145deg, #fef6e6 0%, #fffbf0 100%);
+  border: 1px solid rgba(245, 158, 11, 0.1);
+}
+
+.stats-card.yellow-card::before {
+  background-image: linear-gradient(to right, rgba(245, 158, 11, 0.8), rgba(245, 158, 11, 0.2));
+}
+
+.stats-card.purple-card {
+  background: linear-gradient(145deg, #f5f0ff 0%, #fbf7ff 100%);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.stats-card.purple-card::before {
+  background-image: linear-gradient(to right, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.2));
+}
+
+/* Timer component styling */
+.timer-component {
+  background: linear-gradient(145deg, #f0f7ff 0%, #e6f0ff 100%);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.timer-display {
+  background: white;
+  color: #3b82f6;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Modern chart styling */
+.chart-container {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.chart-line {
+  stroke: url(#line-gradient);
+  stroke-width: 2;
+}
+
+/* Animation effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-element {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animated-gradient-bg {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
